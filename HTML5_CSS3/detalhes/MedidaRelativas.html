@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de medida relativas</title>
+
+    <style>
+        .box {
+            font-size: 20px; /*pai aqui e o item anterio */
+        }
+
+        .box-interno {
+            width: 10em; /*filhor 1 em = 20px pox o pai tem 20px relativo ao item anterio altura e largura*/
+            height: 10em;
+            background-color: blue;
+        }
+        /*efeito progressivo caso o body seja 20px e o box seja 2em o box-interno vai usa 40 px para cada 1em */
+    </style>
+</head>
+<body>
+    <h1>titulo</h1>
+
+    <div class="box">
+        <div class="box-interno">Lorem ipsum dolor, sit amet
+
+        </div>
+    </div>
+</body>
+</html>

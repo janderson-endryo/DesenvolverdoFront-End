@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de medida relativas</title>
+
+    <style>
+        .box {
+            width: 50%; /*o tamanho por porcentagem nem sempre vai usa como refencia toda a tela vai se refrente ao espaço disponivel */
+            height: 400px;
+            background-color: red;
+        }
+
+        .box-interno {
+            width: 50%;
+            height: 50%;
+            background-color: green;
+            font-size: 3ex; /*tamanho da letra baseado no tamnho do x da fonte que esteja definida */
+        }
+
+        .texto {
+            font-family: monospace;
+            width: 15ch;/*define o tamnaho pela qunatidade de letras e melhor com monospace nao e automatico*/
+            margin-top: 20px;
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>titulo</h1>
+    <div class="box">
+        <div class="box-interno"> Lorem ipsum dolor, sit amet
+
+        </div>
+    </div>
+
+    <div class="texto">
+        bonieky lacerda
+    </div>
+</body>
+</html>
