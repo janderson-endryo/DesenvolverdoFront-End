@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (min-width:600px) and (max-width: 1000px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: red;
+        color: black;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+@media screen  and (max-width: 400px) {
+    body {
+        background-color: yellow;
+    }
+}
