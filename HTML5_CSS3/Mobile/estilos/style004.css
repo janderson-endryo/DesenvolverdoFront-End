@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@media screen and (aspect-ratio: 1/1) { /*a propoçao da tela estive 1/1 ex: um quadrado perfeito*/
+    body {
+        background-color: red;
+    }
+    
+}
+
+@media screen and (min-aspect-ratio: 4/2) { /*propoçao da tela de largura e altura nessa ordem*/
+    body {
+        background-color: yellow;
+    }
+    
+}
+
+@media screen and (max-aspect-ratio: 1/2) { /*propoçao da tela de largura e altura nessa ordem*/
+    body {
+        background-color: crimson;
+    }
+    
+}
