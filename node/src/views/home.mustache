@@ -1,0 +1,23 @@
+{{>parcial/header}}
+
+{{#condicional}}
+<h1>bom dia! senhor: {{user.nome}} sua idade e {{user.idade}} voce e {{maio}}</h1>
+{{/condicional}}
+
+<ul>
+    {{#produtor}}
+        <li>{{title}} - R$ {{preco}}</li>
+    {{/produtor}}
+</ul>
+
+<ul>
+    {{#agenda}}
+        <li>{{.}}</li>
+    {{/agenda}}
+
+    {{^agenda}}
+    nao a frases hoje
+    {{/agenda}}
+</ul>
+
+{{>parcial/foot}}

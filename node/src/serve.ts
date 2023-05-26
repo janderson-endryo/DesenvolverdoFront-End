@@ -1,21 +1,26 @@
-import express, {Request, Response} from "express"
+import express ,{Response, Request} from "express"
+import path from "path"
+import mustache from "mustache-express"
 
 const server = express()
+server.use(express.urlencoded({extended: true}))
+
+server.set("view engine", "mustache");
+server.set("views",path.join(__dirname,"views"));
+server.engine("mustache", mustache());
+
+import mainrouter from "./routes/index"
+import painelrouter from "./routes/loja"
 
 
-server.get('/', (req: Request, res: Response) => {
-    res.send("ola mundo")
+server.use(mainrouter)
+
+server.use("/painel", painelrouter)
+
+server.use(express.static(path.join(__dirname,"../public")))
+
+server.use((req: Request, res: Response)=>{
+    res.status(404).send("pagina nao encontrada")
 })
 
-server.get('/noticia/:slug',(req :Request, res: Response)=> {
-    let slug: string = req.params.slug
-    res.send(`noticia ${slug}`) 
-})
-
-server.get('/voo/:origem-:destino',(req: Request, res: Response) => {
-    let {origem, destino} = req.params
-
-    res.send(`procurando o voo de ${origem} ate ${destino}`)
-})
-
-server.listen(8090)
+server.listen(80)
