@@ -1,6 +1,9 @@
 import express ,{Response, Request} from "express"
 import path from "path"
 import mustache from "mustache-express"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const server = express()
 server.use(express.urlencoded({extended: true}))
@@ -23,4 +26,4 @@ server.use((req: Request, res: Response)=>{
     res.status(404).send("pagina nao encontrada")
 })
 
-server.listen(80)
+server.listen(process.env.PORT)
