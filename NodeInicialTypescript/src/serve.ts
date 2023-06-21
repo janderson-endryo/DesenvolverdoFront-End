@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 dotenv.config()
 
 const server = express()
+
 server.use(express.urlencoded({extended: true}))
 
 server.set("view engine", "mustache");
