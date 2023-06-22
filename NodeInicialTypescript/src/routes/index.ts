@@ -11,8 +11,8 @@ router.get("/formulario",formcontroller.form)
 
 router.get("/cc/:teste", (req: Request, res: Response) => {
 
-    let teste: string = req.params.teste
-    res.render(`./cc/:${teste}`)
+    let teste: string = req.params.teste as string
+    res.render(`./cc/: ${teste}`);
 })
 
 router.get("/nome", (req: Request, res: Response) => {
