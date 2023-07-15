@@ -1,4 +1,4 @@
-import  express  from "express";
+import express from "express";
 import dotenv from "dotenv"
 import path from "path"
 
@@ -8,10 +8,12 @@ const server = express()
 import mustache from "mustache-express"
 
 server.set("view engine", "mustache");
-server.set("views",path.join(__dirname,"views"))
+server.set("views", path.join(__dirname, "views"))
 server.engine("mustache", mustache())
 
 import router from "./routes/index";
+
+server.use(express.urlencoded({ extended: true }))
 
 server.use(router)
 

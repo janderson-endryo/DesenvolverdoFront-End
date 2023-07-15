@@ -1,7 +1,21 @@
 <h1>ola mundo</h1>
 
+<form action="/formulario" method="post">
+    <input type="text" name="nome" id="">
+    <input type="submit" value="adicionar">
+</form>
+
+<form action="/modificar" method="post">
+    <input type="text" name="nome" id="" placeholder="escolha o velhor nome">
+    <input type="text" name="n" id="" placeholder="escolha o novo nome">
+
+    <input type="submit" value="modificar">
+</form>
+
+
+  
 {{#usuarios}}
-
-<li>seu id e {{id}} seu nome e {{nome}} </li> 
-
+<li>seu id e {{id}}, seu nome e {{nome}} a primeira letra do seu nome e :{{virtualName}} <a href="/usuarios/{{id}}/excluir">excluir</a></li>
 {{/usuarios}}
+
+

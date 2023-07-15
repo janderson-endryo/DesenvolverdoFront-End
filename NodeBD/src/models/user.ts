@@ -9,11 +9,32 @@ export interface userbd extends Model {
 export const User = sequelize.define<userbd>("user", {
     id: {
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        autoIncrement:true,
     },
 
     nome: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        get() {
+            let raw = this.getDataValue("nome")
+            return raw.toUpperCase()
+        },
+
+        set(val:string) {
+            if (val != "janderson") {
+                val = "erro"
+            }
+            this.setDataValue("nome",val)
+        },
+    },
+
+    virtualName: {
+        type: DataTypes.VIRTUAL,
+        get() {
+            let name: string = this.getDataValue("nome")
+            return name.charAt(0)
+
+        }
     }
 
 }, {
