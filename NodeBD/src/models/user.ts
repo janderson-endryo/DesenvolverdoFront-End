@@ -20,12 +20,12 @@ export const User = sequelize.define<userbd>("user", {
             return raw.toUpperCase()
         },
 
-        set(val:string) {
+        /*set(val:string) {
             if (val != "janderson") {
                 val = "erro"
             }
             this.setDataValue("nome",val)
-        },
+        },*/
     },
 
     virtualName: {
